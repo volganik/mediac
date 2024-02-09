@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: headerFragment">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>Фотографии</h1>
+		</div>
+		<div>
+
+
+<tr th:each="image: ${images}">
+   <td>
+	<a th:href="@{http://{hn}/evafiles/appleIV/{id}(hn=${hostname},id=${image})}"> <img th:src="@{http://{hn}/evafiles/appleIV/.tdb/thumbnail.{id}(hn=${hostname},id=${image})}" /> </a>
+
+	</td>
+
+</tr>
+
+
+
+		<div id="pagefoot" th:include="layout :: footerFragment">Footer
+		</div>
+	</div>
+
+</body>
+</html>
